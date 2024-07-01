@@ -4,6 +4,7 @@ import serverless, { Handler } from "serverless-http";
 
 
 const app = express();
+app.use(express.json());
 
 app.post("/logs", (req, res) => {
   console.log(req.body);
