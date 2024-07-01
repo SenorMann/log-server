@@ -7,7 +7,6 @@ export class RootStack extends cdk.Stack {
     super(scope, id, props);
 
     new DockerImageFunction(this, "lambdaFn", {
-      allowAllOutbound: true,
       code: DockerImageCode.fromImageAsset(path.join(__dirname, '../')),
       memorySize: 256,
       timeout: cdk.Duration.seconds(30),
